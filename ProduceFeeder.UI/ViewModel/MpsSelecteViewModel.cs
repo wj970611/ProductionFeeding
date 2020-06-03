@@ -1,3 +1,4 @@
+using CommonServiceLocator;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
@@ -68,10 +69,10 @@ namespace ProduceFeeder.UI.ViewModel
             using (K3BhDBContext k3DBContext = new K3BhDBContext())
             {
                 LoadWaitvisibility = Visibility.Visible;
-               
+
                 PlanProItemView = await new K3MPSRepository().GetAll()
                     .Where(x => x.QJId == qJItem.FItemId)
-                    .Where(x=>x.K3Dep.FName !="制造二科")  
+                    .Where(x => x.K3Dep.FName != "制造二科")
                     .GroupBy(g => new
                     {
                         g.FItemID,
@@ -160,14 +161,22 @@ namespace ProduceFeeder.UI.ViewModel
 
         private async void mpsItemSelected(MPSPlanItem mpsItem)
         {
+            try
+            {
 
-            await mpsItem.CPItem.OnItemIDChangedAsync();
-            mpsItem.GetProdceYCQty();
-            CPRingItemView = mpsItem.CPItem.Rings;
-            BOMItemPurchaseView = mpsItem.CPItem.ComponentItems.Where(i => i.ItemTpye == ItemType.Purchase).ToList();
+                await mpsItem.CPItem.OnItemIDChangedAsync();
+                mpsItem.GetProdceYCQty();
+                CPRingItemView = mpsItem.CPItem.Rings;
+                BOMItemPurchaseView = mpsItem.CPItem.ComponentItems.Where(i => i.ItemTpye == ItemType.Purchase).ToList();
 
-            RaisePropertyChanged("CPRingItemView");
-            RaisePropertyChanged("BOMItemPurchaseView");
+                RaisePropertyChanged("CPRingItemView");
+                RaisePropertyChanged("BOMItemPurchaseView");
+            }
+            catch (Exception ex)
+            {
+
+            }
+
         }
 
         private void WorkShopFilterChanged(string value)

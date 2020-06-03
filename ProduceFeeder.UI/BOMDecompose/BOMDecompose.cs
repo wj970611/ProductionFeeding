@@ -1,4 +1,4 @@
-﻿using DevExpress.Xpf.Ribbon;
+﻿
 using ProduceFeeder.UI.Models;
 using ProduceFeeder.UI.Models.K3Items;
 using System;

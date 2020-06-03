@@ -18,8 +18,7 @@ namespace ProduceFeeder.UI.Extension
                         if (str.Contains(value))
                             return true;
                     }
-                }
-
+                } 
                 return false;
             }
         }

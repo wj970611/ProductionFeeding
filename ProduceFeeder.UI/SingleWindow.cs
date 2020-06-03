@@ -14,11 +14,7 @@ namespace ProduceFeeder.UI
         private SingleWindow():base()
         { 
         }
-
-        
-
-        
-
+          
         
         protected override void OnClosing(CancelEventArgs e)
         {

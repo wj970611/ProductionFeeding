@@ -385,7 +385,7 @@
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="199"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="102"/>
                 <ColumnDefinition Width="102"/>
                 <ColumnDefinition Width="101"/>
                 <ColumnDefinition Width="39"/>
@@ -413,7 +413,7 @@
                 DisplayMemberPath="FName"  SelectedItem="{Binding SelectedQJItem}" Width="120" HorizontalAlignment="Right" Grid.Column="8" Margin="0,4"/>
             <ComboBox Grid.Column="9" Margin="15,4" ItemsSource="{Binding WorkShopView}" SelectedItem="{Binding SelectedWorkShop}"/>
 
-            <Button  Content="加入预排" BorderBrush="#FFABADB3" BorderThickness="0,1,1,1" Grid.Column="11" Background="#FFDCF9D1"  Command="{Binding AddYPCommand}" Margin="5,3"/>
+            <Button  Content="加入预排" BorderBrush="#FFABADB3" BorderThickness="0,1,1,1" Grid.Column="11" Background="#FFDCF9D1"  Command="{Binding AddYPCommand}" Margin="3"/>
             <Button  Content="安排投料" BorderBrush="#FFABADB3" BorderThickness="0,1,1,1" Grid.Column="12" Background="#FFA3FD81"  Command="{Binding AddTLCommand}" Margin="3"/>
 
         </Grid>

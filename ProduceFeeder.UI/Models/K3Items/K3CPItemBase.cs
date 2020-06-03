@@ -104,15 +104,15 @@ namespace ProduceFeeder.UI.Models.K3Items
             InnerRing.RingProcessItems = _innerProcessItems;
             OuterRing.RingProcessItems = _outerProcessItems;
 
-            PrevRCLProcessItem = getPrevRCLItem();
-            PrevRCLProcessItems = InnerRing.PrevRCLItems.Concat(OuterRing.PrevRCLItems).ToList();
-            NextRCLProcessItems = InnerRing.NextRCLItems.Concat(OuterRing.NextRCLItems).ToList();
+            //PrevRCLProcessItem = getPrevRCLItem();
+            //PrevRCLProcessItems = InnerRing.PrevRCLItems.Concat(OuterRing.PrevRCLItems).ToList();
+            //NextRCLProcessItems = InnerRing.NextRCLItems.Concat(OuterRing.NextRCLItems).ToList();
 
-            Rings = new List<RingItem> { OuterRing, InnerRing };
+            //Rings = new List<RingItem> { OuterRing, InnerRing };
 
-            DHProcess = ProcessQty("氮化");
-            LNProcess = ProcessQty("冷辗");
-            CJGProcess = ProcessQty("车加工");
+            //DHProcess = ProcessQty("氮化");
+            //LNProcess = ProcessQty("冷辗");
+            //CJGProcess = ProcessQty("车加工");
         }
 
         private async Task GetComponetItemsAsync()

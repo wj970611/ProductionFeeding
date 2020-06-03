@@ -1,4 +1,5 @@
-﻿using DevExpress.Mvvm;
+﻿
+using GalaSoft.MvvmLight;
 using System;
 using System.Collections.Generic;
 using System.Linq;

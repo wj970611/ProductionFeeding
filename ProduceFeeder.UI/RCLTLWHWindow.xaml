@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProduceFeeder.UI"
          xmlns:dd="clr-namespace:GongSolutions.Wpf.DragDrop;assembly=GongSolutions.Wpf.DragDrop" 
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+        Title="{Binding Title}" Height="414" Width="746" WindowState="Maximized" WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <Binding Source="{StaticResource Locator}" Path="RCLTLWH"></Binding>
     </Window.DataContext>
@@ -44,7 +44,7 @@
             <Border BorderThickness="10" BorderBrush="#FFA6A6A6" Background="#FF973737" Margin="4,1" Grid.Column="3"/>
             <Button Command="{Binding DetailCommand}"  Grid.Column="4" Style="{DynamicResource ToolButtonStyle2}">
                 <Image Source="/image/detail_white.png"/>
-            </Button> 
+            </Button>
             <Button Command="{Binding RedFlagCommand}" ToolTip="加急"  Grid.Column="5" Style="{DynamicResource ToolButtonStyle2}" >
                 <Image Source="/image/flag_red.png"/>
             </Button>
@@ -60,7 +60,7 @@
             <Button Content="合单"  HorizontalAlignment="Center"   Grid.Column="9" 
                     Command="{Binding UCommand  }"  
                     Style="{DynamicResource ToolButtonStyle2}" />
-  
+
         </Grid>
         <DataGrid ItemsSource="{ Binding MPSTLItemsView}" RowHeight="32" CanUserAddRows="False"  dd:DragDrop.IsDragSource="True" dd:DragDrop.IsDropTarget="True"
                     SelectedItem="{Binding SelectedMPSTLItem}" dd:DragDrop.DropHandler="{Binding}" AlternationCount="2"
@@ -86,20 +86,20 @@
                 <DataGridTextColumn Binding="{Binding Feeder}"  Header="投料人" ClipboardContentBinding="{x:Null}"/>
                 <DataGridTextColumn Binding="{Binding RunningStatus}"  Header="运行状态" ClipboardContentBinding="{x:Null}"/>
                 <DataGridTextColumn Binding="{Binding Remark}"  Header="生产备注" ClipboardContentBinding="{x:Null}"  Width="*"/>
-            </DataGrid.Columns> 
-                <DataGrid.RowStyle>
-                    <Style TargetType="{x:Type DataGridRow}">
-                        <Style.Triggers>
-                            <Trigger Property="ItemsControl.AlternationIndex"  Value="0">
-                                <Setter Property="Background" Value="#FFE8DDB7" />
-                            </Trigger>
-                            <Trigger Property="ItemsControl.AlternationIndex"  Value="1">
-                                <Setter Property="Background" Value="#FFCDCAB1" />
-                            </Trigger>
-                        </Style.Triggers>
-                        <Setter Property="Foreground" Value="Black"/>
-                    </Style>
-                </DataGrid.RowStyle> 
+            </DataGrid.Columns>
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Style.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex"  Value="0">
+                            <Setter Property="Background" Value="#FFE8DDB7" />
+                        </Trigger>
+                        <Trigger Property="ItemsControl.AlternationIndex"  Value="1">
+                            <Setter Property="Background" Value="#FFCDCAB1" />
+                        </Trigger>
+                    </Style.Triggers>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Style>
+            </DataGrid.RowStyle>
         </DataGrid>
     </Grid>
 </Window>
